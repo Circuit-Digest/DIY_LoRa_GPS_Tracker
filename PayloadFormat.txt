@@ -1,0 +1,26 @@
+
+function Decoder(bytes, port) {
+  var result = "";
+  var result1 = "";
+  var result2 = "";
+  for (var i = 0; i < bytes.length; i++) {
+    
+    if(String.fromCharCode(bytes[i])=='X')
+    {
+      break;
+    }
+    else
+    {
+    result += (String.fromCharCode(bytes[i]));
+    }
+  }
+ var myArray = result.split(",");
+ result1=myArray[0];
+ result2=myArray[1];
+ 
+ return{
+   "position": { "value":1, "context":{"lat":result1.trim(),"lng":result2.trim()}}
+   
+ }; 
+  
+}
